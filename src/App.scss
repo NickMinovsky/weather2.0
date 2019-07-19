@@ -1,4 +1,4 @@
-// General
+// =================================== General ===================================
 html {
   height: 100%;
   width: 100%;
@@ -8,7 +8,7 @@ body {
   margin: 0 !important;
 }
 
-// Navbar
+// =================================== Navbar ===================================
 h6 {
   font-weight: 300 !important;
 }
@@ -23,7 +23,7 @@ h6 {
   background-color: #1976d2 !important;
 }
 
-// Table
+// =================================== Table ===================================
 .subtitle {
   font-weight: 300;
   text-align: center;
@@ -32,7 +32,7 @@ h6 {
   text-align: center !important;
 }
 
-// Current weather
+// =================================== Current weather ===================================
 .current-weather {
   display: flex;
   flex-direction: column;
@@ -44,15 +44,59 @@ h6 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     width: 40%;
     height: 50vh;
     margin: 5rem;
     padding: 0;
+
+    &-title {
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+
+    &-desc {
+      line-height: 0;
+      position: relative;
+      left: -28px;
+      font-family: "Poiret One", cursive;
+    }
+
+    & &-degree {
+      font-size: 3.5rem;
+      margin: 2rem auto;
+      font-weight: lighter;
+    }
   }
 }
 
-// Today
+.fav-btn {
+  background-color: #5398dd !important;
+  margin-bottom: 1rem !important;
+}
+
+// =================================== alerts ===================================
 .alert {
   height: 20px;
+  margin: 0;
+  color: #5398dd;
+  animation: blink 2s forwards;
+}
+.alert-off {
+  margin: 0;
+  height: 20px;
+  opacity: 0;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
