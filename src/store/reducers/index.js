@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import test from "./test";
+import favReducer from "./favReducer";
+import dataReducer from "./dataReducer";
 
 const rootReducer = combineReducers({
-  test
+  favoritesCount: favReducer,
+  ApiData: dataReducer
 });
 
 export default rootReducer;

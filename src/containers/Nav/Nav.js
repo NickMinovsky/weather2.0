@@ -1,7 +1,6 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-import notify from "../../store/actions/index";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -80,18 +79,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function PrimarySearchAppBar() {
-  const dispatch = useDispatch();
-  const notif = useSelector(state => state.notification);
+  const favorites = useSelector(state => state.favoritesCount);
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  function handleProfileMenuOpen(event) {
-    setAnchorEl(event.currentTarget);
-  }
 
   function handleMobileMenuClose() {
     setMobileMoreAnchorEl(null);
@@ -179,7 +172,7 @@ export default function PrimarySearchAppBar() {
                 aria-label="Show 17 new notifications"
                 color="inherit"
               >
-                <Badge badgeContent={17} color="secondary">
+                <Badge badgeContent={favorites} color="secondary">
                   <NotificationsIcon />
                 </Badge>
               </IconButton>

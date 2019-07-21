@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import Button from "@material-ui/core/Button";
+import { addFav } from "../../store/actions";
 
 export default function Today() {
   const [showAlert, toggleShowAlert] = useState(false);
   const [showAnimation, toggleShowAnimation] = useState("alert-off");
+  const dispatch = useDispatch();
 
   return (
     <div className="current-weather">
@@ -15,6 +18,7 @@ export default function Today() {
           onClick={() => {
             toggleShowAlert(true);
             toggleShowAnimation("alert");
+            dispatch(addFav());
           }}
           variant="contained"
           color="primary"
