@@ -16,8 +16,12 @@ import "./App.css";
 
 class App extends Component {
   componentDidMount() {
-    const { getData } = this.props;
-    getData("tel-aviv");
+    const { getData, searchTerm } = this.props;
+    if (!searchTerm) {
+      getData("tel-aviv");
+    } else {
+      getData(searchTerm);
+    }
   }
 
   isLoading() {
@@ -43,7 +47,8 @@ class App extends Component {
 const mapStateToProps = state => ({
   error: getDataError(state),
   data: getDataSuccess(state),
-  pending: getDataPending(state)
+  pending: getDataPending(state),
+  searchTerm: state.searchTerm.searchItem
 });
 
 const mapDispatchToProps = dispatch =>

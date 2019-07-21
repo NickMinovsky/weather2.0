@@ -14,7 +14,7 @@ const getData = term => {
           throw res.error;
         }
         dispatch(getDataSuccess(res));
-        console.log(res);
+        console.log("FETCED");
         return res;
       })
       .catch(error => {

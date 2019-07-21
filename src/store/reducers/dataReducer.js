@@ -34,7 +34,7 @@ const dataReducer = (state = initialState, { type, payload, error }) => {
   }
 };
 
-export const getDataSuccess = state => state.data;
+export const getDataSuccess = state => state.ApiData;
 export const getDataPending = state => state.pending;
 export const getDataError = state => state.error;
 
