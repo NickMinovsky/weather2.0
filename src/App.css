@@ -90,6 +90,10 @@ h6 {
   margin-bottom: 1rem !important;
 }
 
+.weather-icon {
+  width: 30px;
+}
+
 .alert {
   height: 20px;
   margin: 0;

@@ -9,16 +9,8 @@ class Home extends Component {
     return (
       <Container maxWidth="md">
         <div>
-          {/* <div className="current-weather">
-            <div className="current-weather__circle">
-              <h1>Tel Aviv</h1>
-              <p>Sunny</p>
-              <p>28 c</p>
-            </div>
-          </div> */}
           <Today />
           <div className="forecast-weather">
-            <h1 className="subtitle">Your Weekley Forecast:</h1>
             <Table />
           </div>
         </div>

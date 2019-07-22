@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import searchItemAction from "../../store/actions/";
-import getDataAction from "../../services/getData";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
+import searchItemAction from "../../store/actions/";
+import getDataAction from "../../services/getData";
+import TextField from "@material-ui/core/TextField";
 
 class Nav extends Component {
   state = {};
@@ -19,7 +21,14 @@ class Nav extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <input onChange={this.onChange} type="text" placeholder="search" />
+        <TextField
+          onChange={this.onChange}
+          id="standard-search"
+          label="Search a city"
+          type="search"
+          margin="normal"
+          helperText="Please use english letters only"
+        />
       </form>
     );
   }
