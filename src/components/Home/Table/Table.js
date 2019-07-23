@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import moment from "moment";
 
-import Loader from "../../containers/Loader/Loader";
+import Loader from "../../../containers/Loader/Loader";
 import {
   Table,
   TableBody,
@@ -23,7 +23,7 @@ const ForecastTable = props => {
       <Paper className="table">
         <Table className="table-main">
           <TableHead>
-            <TableRow>
+            <TableRow className="table-row">
               <TableCell>Day of the week</TableCell>
               <TableCell align="right">Status</TableCell>
               <TableCell align="right">Degress</TableCell>
@@ -44,7 +44,7 @@ const ForecastTable = props => {
                       className="weather-icon"
                     />
                   </TableCell>
-                  <TableCell align="right">2</TableCell>
+                  <TableCell align="right">{day.day.maxtemp_c}</TableCell>
                   <TableCell align="right">{day.day.condition.text}</TableCell>
                 </TableRow>
               );

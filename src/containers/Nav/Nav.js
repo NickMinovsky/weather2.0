@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import searchItemAction from "../../store/actions";
 import getDataAction from "../../services/getData";
@@ -24,15 +25,19 @@ class Nav extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <TextField
-          onChange={this.onChange}
-          label="Search a city"
-          type="search"
-          margin="normal"
-          helperText="Please use english letters only"
-        />
-      </form>
+      <div className="navbar">
+        <form onSubmit={this.onSubmit}>
+          <TextField
+            onChange={this.onChange}
+            label="Search a city"
+            type="search"
+            margin="normal"
+            helperText="Please use english letters only"
+          />
+        </form>
+        <Link to="/">Home</Link>
+        <Link to="/favorites">Favs</Link>
+      </div>
     );
   }
 }

@@ -28,8 +28,22 @@ h6 {
   font-weight: 300;
   text-align: center;
 }
-.MuiTableCell-alignRight {
-  text-align: center !important;
+
+.MuiTableCell {
+  &-alignRight {
+    text-align: center !important;
+  }
+  &-root {
+    width: 25%;
+  }
+}
+
+.table {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  &-main {
+    min-height: 650px;
+  }
 }
 
 // =================================== Current weather ===================================
@@ -106,3 +120,5 @@ h6 {
     opacity: 0;
   }
 }
+
+// =================================== Material Fixes ===================================

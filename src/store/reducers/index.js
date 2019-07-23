@@ -4,7 +4,7 @@ import dataReducer from "./dataReducer";
 import searchReducer from "./searchReducer";
 
 const rootReducer = combineReducers({
-  favoritesCount: favReducer,
+  favoritesList: favReducer,
   ApiData: dataReducer,
   searchTerm: searchReducer
 });

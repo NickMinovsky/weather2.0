@@ -1,11 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { addFav } from "../../../store/actions/";
 
 const Today = props => {
   const { data } = props;
   if (data.location === undefined) {
     return <h1>error</h1>;
   }
+
+  const addFavHandler = () => {
+    const cityName = data.location.name;
+    const { favList } = props;
+    if (!favList.includes(cityName)) {
+      props.addFav(cityName);
+    } else {
+      console.log("already in favs");
+    }
+  };
   return (
     <div className="current-weather">
       <div className="current-weather__circle">
@@ -18,20 +31,30 @@ const Today = props => {
         </p>
         <button
           onClick={() => {
-            console.log(data);
+            addFavHandler();
           }}
         >
-          qweqweqwe
+          Add Fav
         </button>
       </div>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    data: state.ApiData.data
-  };
-};
+const mapStateToProps = state => ({
+  data: state.ApiData.data,
+  favList: state.favoritesList
+});
 
-export default connect(mapStateToProps)(Today);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addFav: addFav
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Today);

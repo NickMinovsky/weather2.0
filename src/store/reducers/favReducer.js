@@ -1,10 +1,9 @@
-const favReducer = (state = 0, { type }) => {
+const favReducer = (state = [], { type, payload }) => {
   switch (type) {
     case "ADD_FAV":
-      return state + 1;
+      return [...state, payload];
     default:
       return state;
   }
 };
-
 export default favReducer;
