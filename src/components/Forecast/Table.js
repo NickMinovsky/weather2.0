@@ -3,29 +3,16 @@ import { connect } from "react-redux";
 import moment from "moment";
 
 import Loader from "../../containers/Loader/Loader";
-
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: "100%",
-    marginTop: theme.spacing(3),
-    overflowX: "auto"
-  },
-  table: {
-    minWidth: 650
-  }
-}));
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Paper
+} from "@material-ui/core";
 
 const ForecastTable = props => {
-  const classes = useStyles();
-
   const { data } = props;
   if (data.forecast === undefined) {
     return <Loader />;
@@ -33,8 +20,8 @@ const ForecastTable = props => {
   return (
     <span>
       <h1 className="subtitle">Your Weekley Forecast:</h1>
-      <Paper className={classes.root}>
-        <Table className={classes.table}>
+      <Paper className="table">
+        <Table className="table-main">
           <TableHead>
             <TableRow>
               <TableCell>Day of the week</TableCell>

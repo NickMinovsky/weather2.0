@@ -1,6 +1,9 @@
 import { SEARCH_ITEM } from "../actions/";
 
-const searchReducer = (state = "", { type, payload }) => {
+const initialState = {
+  searchItem: "Tel-Aviv"
+};
+const searchReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SEARCH_ITEM:
       return {
