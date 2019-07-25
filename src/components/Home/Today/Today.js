@@ -11,23 +11,25 @@ const Today = props => {
   }
 
   const addFavHandler = () => {
-    const cityName = data.location.name;
-    const { favList } = props;
-    if (!favList.includes(cityName)) {
-      props.addFav(cityName);
-    } else {
-      console.log("already in favs");
-    }
+    const { current, location } = data;
+    const { favList, addFav } = props;
+    const favCityData = {
+      name: location.name,
+      temp: current.temp_c,
+      condition: current.condition.text,
+      icon: current.condition.icon
+    };
+    addFav(favCityData);
   };
+
+  const { current, location } = data;
   return (
     <div className="current-weather">
       <div className="current-weather__circle">
-        <h1 className="current-weather__circle-title">{data.location.name}</h1>
-        <p className="current-weather__circle-desc">
-          {data.current.condition.text}
-        </p>
+        <h1 className="current-weather__circle-title">{location.name}</h1>
+        <p className="current-weather__circle-desc">{current.condition.text}</p>
         <p className="current-weather__circle-degree">
-          {data.current.temp_c} <sup>o</sup>c
+          {current.temp_c} <sup>o</sup>c
         </p>
         <button
           onClick={() => {
@@ -42,7 +44,7 @@ const Today = props => {
 };
 
 const mapStateToProps = state => ({
-  data: state.ApiData.data,
+  data: state.fromAPI.data,
   favList: state.favoritesList
 });
 

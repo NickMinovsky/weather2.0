@@ -7,7 +7,7 @@ import {
 const initialState = {
   pending: false,
   data: {},
-  error: null
+  error: ""
 };
 
 const dataReducer = (state = initialState, { type, payload, error }) => {
@@ -34,7 +34,7 @@ const dataReducer = (state = initialState, { type, payload, error }) => {
   }
 };
 
-export const getDataSuccess = state => state.ApiData;
+export const getDataSuccess = state => state.fromAPI;
 export const getDataPending = state => state.pending;
 export const getDataError = state => state.error;
 

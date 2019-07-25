@@ -19,7 +19,7 @@ export const getDataError = error => ({
   error: error
 });
 
-// Navbar
+// Navbar search
 const searchItem = inputTerm => ({
   type: SEARCH_ITEM,
   payload: inputTerm
@@ -28,7 +28,7 @@ const searchItem = inputTerm => ({
 export default searchItem;
 
 // Favorites
-export const addFav = clickedCity => ({
+export const addFav = favData => ({
   type: ADD_FAV,
-  payload: clickedCity
+  payload: favData
 });

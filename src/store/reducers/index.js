@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
-import favReducer from "./favReducer";
+import favoritesReducer from "./favoritesReducer";
 import dataReducer from "./dataReducer";
 import searchReducer from "./searchReducer";
 
 const rootReducer = combineReducers({
-  favoritesList: favReducer,
-  ApiData: dataReducer,
+  favoritesList: favoritesReducer,
+  fromAPI: dataReducer,
   searchTerm: searchReducer
 });
 

@@ -58,7 +58,7 @@ const ForecastTable = props => {
 
 const mapStateToProps = state => {
   return {
-    data: state.ApiData.data
+    data: state.fromAPI.data
   };
 };
 export default connect(mapStateToProps)(ForecastTable);
