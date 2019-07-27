@@ -18,6 +18,11 @@ class Nav extends Component {
     const { searchItem } = this.props;
     const input = e.target.value;
     searchItem(input);
+    if (isInputValid(input)) {
+      console.log("worked");
+    } else {
+      console.log("didnot work");
+    }
   };
 
   onSubmit = e => {
