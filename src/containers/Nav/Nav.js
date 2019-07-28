@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import searchItemAction from "../../store/actions";
 import fetchApiAction from "../../services/fetchApi";
-import isInputValid from "../../services/inputValidation";
 import TextField from "@material-ui/core/TextField";
 
 class Nav extends Component {
@@ -18,11 +17,6 @@ class Nav extends Component {
     const { searchItem } = this.props;
     const input = e.target.value;
     searchItem(input);
-    if (isInputValid(input)) {
-      console.log("worked");
-    } else {
-      console.log("didnot work");
-    }
   };
 
   onSubmit = e => {
@@ -31,17 +25,29 @@ class Nav extends Component {
     fetchApi(searchTerm);
   };
 
+  isInputValid = e => {
+    const re = /[a-zA-Z ]+/g;
+    if (!re.test(e.key)) {
+      this.errorMessage = "Please use english letters only";
+    } else {
+      console.log("WORKSSS");
+      this.errorMessage = " ";
+    }
+  };
+
+  errorMessage = " ";
+
   render() {
-    const error = "hello";
     return (
       <div className="navbar">
         <form onSubmit={this.onSubmit}>
           <TextField
             onChange={this.onChange}
+            onKeyPress={this.isInputValid}
             label="Search a city"
             type="search"
             margin="normal"
-            helperText={error}
+            helperText={this.errorMessage}
           />
         </form>
         <Link to="/">Home</Link>

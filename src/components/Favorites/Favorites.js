@@ -1,13 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-class Favorites extends Component {
-  render() {
-    return (
-      <div>
-        <p>welcome to favorites</p>
-      </div>
-    );
-  }
-}
+import FavItem from "./FavItem/FavItem";
 
-export default Favorites;
+const Favorites = props => {
+  return (
+    <div>
+      <p>welcome to favorites</p>
+      <ul>
+        {props.favList.map(city => {
+          return (
+            <li>
+              <FavItem
+                name={city.name}
+                temp={city.temp}
+                condition={city.condition}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const mapStateToProps = state => ({
+  favList: state.favoritesList
+});
+
+export default connect(mapStateToProps)(Favorites);

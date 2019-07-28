@@ -1,9 +1,11 @@
-const isInputValid = input => {
+// input validation (english letters only)
+const isInputValid = event => {
   const re = /[a-zA-Z ]+/g;
-  if (!re.test(input)) {
-    return false;
+  if (!re.test(event.key)) {
+    event.preventDefault();
+    console.log('error!');
   } else {
-    return true;
+    console.log('WORKSSS');
   }
 };
 

@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { addFav } from "../../../store/actions/";
+import isAdded from "../../../services/isAdded";
 
 const Today = props => {
   const { data } = props;
   if (data.location === undefined) {
-    return <h1>error</h1>;
+    return <h1>Loading...</h1>;
   }
 
   const addFavHandler = () => {
@@ -19,7 +20,11 @@ const Today = props => {
       condition: current.condition.text,
       icon: current.condition.icon
     };
-    addFav(favCityData);
+    if (!isAdded(favList, location.name)) {
+      addFav(favCityData);
+    } else {
+      console.log("already in");
+    }
   };
 
   const { current, location } = data;
