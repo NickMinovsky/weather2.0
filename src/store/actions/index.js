@@ -3,6 +3,7 @@ export const GET_DATA_PENDING = "GET_DATA_PENDING";
 export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
 export const GET_DATA_ERROR = "GET_DATA_ERROR";
 export const SEARCH_ITEM = "SEARCH_ITEM";
+export const DELETE_ITEM = "DELETE_ITEM";
 
 // Data api fetching
 export const getDataPending = () => ({
@@ -31,4 +32,9 @@ export default searchItem;
 export const addFav = favData => ({
   type: ADD_FAV,
   payload: favData
+});
+
+export const deleteFav = cityId => ({
+  type: DELETE_ITEM,
+  payload: cityId
 });
