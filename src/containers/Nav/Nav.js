@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import { inputError } from "../../store/actions";
 import searchItemAction from "../../store/actions";
 import fetchApiAction from "../../services/fetchApi";
 import TextField from "@material-ui/core/TextField";
@@ -26,18 +27,17 @@ class Nav extends Component {
   };
 
   isInputValid = e => {
+    const { inputError } = this.props;
     const re = /[a-zA-Z ]+/g;
     if (!re.test(e.key)) {
-      this.errorMessage = "Please use english letters only";
+      inputError("Please use English letters only");
     } else {
-      console.log("WORKSSS");
-      this.errorMessage = " ";
+      inputError(" ");
     }
   };
 
-  errorMessage = " ";
-
   render() {
+    const { error } = this.props;
     return (
       <div className="navbar">
         <form onSubmit={this.onSubmit}>
@@ -47,7 +47,7 @@ class Nav extends Component {
             label="Search a city"
             type="search"
             margin="normal"
-            helperText={this.errorMessage}
+            helperText={error}
           />
         </form>
         <Link to="/">Home</Link>
@@ -58,14 +58,16 @@ class Nav extends Component {
 }
 
 const mapStateToProps = state => ({
-  searchTerm: state.searchTerm.searchItem
+  searchTerm: state.searchTerm.searchItem,
+  error: state.errors.inputError
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       fetchApi: fetchApiAction,
-      searchItem: searchItemAction
+      searchItem: searchItemAction,
+      inputError: inputError
     },
     dispatch
   );

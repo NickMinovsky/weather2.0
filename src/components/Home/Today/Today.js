@@ -43,6 +43,7 @@ const Today = props => {
         >
           Add Fav
         </button>
+        <p></p>
       </div>
     </div>
   );
@@ -50,7 +51,7 @@ const Today = props => {
 
 const mapStateToProps = state => ({
   data: state.fromAPI.data,
-  favList: state.favoritesList
+  favList: state.favoritesList,
 });
 
 const mapDispatchToProps = dispatch =>

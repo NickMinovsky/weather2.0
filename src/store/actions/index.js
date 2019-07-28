@@ -4,6 +4,9 @@ export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
 export const GET_DATA_ERROR = "GET_DATA_ERROR";
 export const SEARCH_ITEM = "SEARCH_ITEM";
 export const DELETE_ITEM = "DELETE_ITEM";
+export const INPUT_ERROR = "INPUT_ERROR";
+export const FAV_ERROR = "FAV_ERROR";
+
 
 // Data api fetching
 export const getDataPending = () => ({
@@ -37,4 +40,15 @@ export const addFav = favData => ({
 export const deleteFav = cityId => ({
   type: DELETE_ITEM,
   payload: cityId
+});
+
+// Error Handleing
+export const inputError = message => ({
+  type: INPUT_ERROR,
+  payload: message
+});
+
+export const favError = message => ({
+  type: FAV_ERROR,
+  payload: message
 });

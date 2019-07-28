@@ -8,7 +8,9 @@ const FavItem = props => {
   return (
     <div>
       <p>{props.name}</p>
-      <p>{props.temp}</p>
+      <p>
+        {props.temp} <sup>o</sup>c
+      </p>
       <p>{props.condition}</p>
       <button
         onClick={() => {
