@@ -25,7 +25,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  pending: state.fromAPI.pending
+  pending: state.apiData.pending
 });
 
 export default connect(mapStateToProps)(Home);

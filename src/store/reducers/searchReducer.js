@@ -15,4 +15,6 @@ const searchReducer = (state = initialState, { type, payload }) => {
 };
 
 export const getSearchItem = state => state.searchItem;
+export const getRedirectState = state => state.redirect;
+
 export default searchReducer;

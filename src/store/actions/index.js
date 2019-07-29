@@ -3,10 +3,10 @@ export const GET_DATA_PENDING = "GET_DATA_PENDING";
 export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
 export const GET_DATA_ERROR = "GET_DATA_ERROR";
 export const SEARCH_ITEM = "SEARCH_ITEM";
-export const DELETE_ITEM = "DELETE_ITEM";
+export const DELETE_FAV = "DELETE_FAV";
 export const INPUT_ERROR = "INPUT_ERROR";
 export const FAV_ERROR = "FAV_ERROR";
-
+export const RELOAD = "RELOAD";
 
 // Data api fetching
 export const getDataPending = () => ({
@@ -38,7 +38,7 @@ export const addFav = favData => ({
 });
 
 export const deleteFav = cityId => ({
-  type: DELETE_ITEM,
+  type: DELETE_FAV,
   payload: cityId
 });
 
@@ -51,4 +51,9 @@ export const inputError = message => ({
 export const favError = message => ({
   type: FAV_ERROR,
   payload: message
+});
+
+// Redirect
+export const reLoad = () => ({
+  type: RELOAD
 });

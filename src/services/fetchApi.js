@@ -2,7 +2,7 @@ import { getDataPending, getDataSuccess, getDataError } from "../store/actions";
 
 const API_KEY = "dab15c856a2d47f388293819190107";
 
-const getData = term => {
+const fetchApi = term => {
   return dispatch => {
     dispatch(getDataPending());
     fetch(
@@ -23,4 +23,4 @@ const getData = term => {
   };
 };
 
-export default getData;
+export default fetchApi;

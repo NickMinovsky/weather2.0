@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { inputError } from "../../store/actions";
 import searchItemAction from "../../store/actions";
-import fetchApiAction from "../../services/fetchApi";
+import fetchApiAction from "../../services/FetchApi";
 import TextField from "@material-ui/core/TextField";
 
 class Nav extends Component {
@@ -20,12 +20,6 @@ class Nav extends Component {
     searchItem(input);
   };
 
-  onSubmit = e => {
-    e.preventDefault();
-    const { fetchApi, searchTerm } = this.props;
-    fetchApi(searchTerm);
-  };
-
   isInputValid = e => {
     const { inputError } = this.props;
     const re = /[a-zA-Z ]+/g;
@@ -34,6 +28,12 @@ class Nav extends Component {
     } else {
       inputError(" ");
     }
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+    const { fetchApi, searchTerm } = this.props;
+    fetchApi(searchTerm);
   };
 
   render() {

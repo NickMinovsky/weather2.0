@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { addFav } from "../../../store/actions/";
-import isAdded from "../../../services/isAdded";
+import isAdded from "../../../services/DuplicateValidation";
 
 const Today = props => {
   const { data } = props;
@@ -43,15 +43,15 @@ const Today = props => {
         >
           Add Fav
         </button>
-        <p></p>
+        <p />
       </div>
     </div>
   );
 };
 
 const mapStateToProps = state => ({
-  data: state.fromAPI.data,
-  favList: state.favoritesList,
+  data: state.apiData.data,
+  favList: state.favoritesList
 });
 
 const mapDispatchToProps = dispatch =>
