@@ -2,7 +2,7 @@ import {
   GET_DATA_PENDING,
   GET_DATA_SUCCESS,
   GET_DATA_ERROR
-} from "../actions/";
+} from "../actions/types";
 
 const initialState = {
   pending: false,

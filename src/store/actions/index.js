@@ -1,12 +1,14 @@
-export const ADD_FAV = "ADD_FAV";
-export const GET_DATA_PENDING = "GET_DATA_PENDING";
-export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
-export const GET_DATA_ERROR = "GET_DATA_ERROR";
-export const SEARCH_ITEM = "SEARCH_ITEM";
-export const DELETE_FAV = "DELETE_FAV";
-export const INPUT_ERROR = "INPUT_ERROR";
-export const FAV_ERROR = "FAV_ERROR";
-export const RELOAD = "RELOAD";
+import {
+  ADD_FAV,
+  GET_DATA_PENDING,
+  GET_DATA_ERROR,
+  GET_DATA_SUCCESS,
+  SEARCH_ITEM,
+  DELETE_FAV,
+  INPUT_ERROR,
+  FAV_ERROR,
+  RELOAD
+} from "./types";
 
 // Data api fetching
 export const getDataPending = () => ({

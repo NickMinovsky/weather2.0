@@ -16,12 +16,13 @@ div#root {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 16px;
 }
 
 h6 {
@@ -40,6 +41,14 @@ h6 {
 .MuiAppBar-colorPrimary {
   color: #bbdefb !important;
   background-color: #1976d2 !important;
+}
+
+.MuiInput-underline:after {
+  border-color: #1976d2 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #1976d2 !important;
 }
 
 .MuiFormHelperText-root {
@@ -65,6 +74,22 @@ h6 {
   to {
     opacity: 1;
   }
+}
+
+.link {
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #5fa4e9;
+  opacity: 0.8;
+  -webkit-transition: opacity 300ms, color 300ms;
+  transition: opacity 300ms, color 300ms;
+}
+
+.link:hover {
+  color: #2b80d4;
+  opacity: 1;
 }
 
 .subtitle {
@@ -121,7 +146,7 @@ h6 {
 }
 
 .MuiTableHead-root {
-  background-color: cornflowerblue;
+  background-color: #5398dd;
 }
 
 .MuiTableCell-head {
@@ -142,6 +167,7 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.5rem;
 }
 
 .current-weather__circle {
@@ -217,8 +243,8 @@ h6 {
   text-align: center;
   -webkit-animation: blink 1s forwards;
           animation: blink 1s forwards;
-  -webkit-animation-iteration-count: 5;
-          animation-iteration-count: 5;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
 }
 
 @keyframes blink {
@@ -240,6 +266,6 @@ h6 {
 .loading {
   -webkit-animation: blink 700ms infinite forwards;
           animation: blink 700ms infinite forwards;
-  color: #1976d2;
+  color: #1976d2 !important;
 }
 /*# sourceMappingURL=App.css.map */

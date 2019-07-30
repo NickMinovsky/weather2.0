@@ -1,4 +1,4 @@
-import { INPUT_ERROR, FAV_ERROR } from "../actions/";
+import { INPUT_ERROR, FAV_ERROR } from "../actions/types";
 
 const initialState = {
   inputError: " ",

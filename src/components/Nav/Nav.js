@@ -42,22 +42,26 @@ class Nav extends Component {
     const { error } = this.props;
     return (
       <div className="navbar">
-        <form onSubmit={this.onSubmit} id="search-form">
-          <TextField
-            onChange={this.onChange}
-            onKeyPress={this.isInputValid}
-            label="Search a city"
-            type="search"
-            margin="normal"
-            helperText={error}
-          />
-        </form>
-        <Link className="link" to="/">
-          Home
-        </Link>
-        <Link className="link" to="/favorites">
-          Favs
-        </Link>
+        <div className="left">
+          <form onSubmit={this.onSubmit} id="search-form">
+            <TextField
+              onChange={this.onChange}
+              onKeyPress={this.isInputValid}
+              label="Search a city"
+              type="search"
+              margin="normal"
+              helperText={error}
+            />
+          </form>
+        </div>
+        <div className="right">
+          <Link className="link" to="/">
+            Home
+          </Link>
+          <Link className="link" to="/favorites">
+            Favorites
+          </Link>
+        </div>
       </div>
     );
   }

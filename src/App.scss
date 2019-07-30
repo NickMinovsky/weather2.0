@@ -16,8 +16,9 @@ div#root {
 
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 16px;
 }
 
 h6 {
@@ -38,6 +39,14 @@ h6 {
   background-color: #1976d2 !important;
 }
 
+.MuiInput-underline:after {
+  border-color: #1976d2 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #1976d2 !important;
+}
+
 .MuiFormHelperText-root {
   height: 10px !important;
   color: red !important;
@@ -50,6 +59,20 @@ h6 {
   }
 
   to {
+    opacity: 1;
+  }
+}
+
+.link {
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #5fa4e9;
+  opacity: 0.8;
+  transition: opacity 300ms, color 300ms;
+  &:hover {
+    color: #2b80d4;
     opacity: 1;
   }
 }
@@ -108,7 +131,7 @@ h6 {
 }
 
 .MuiTableHead-root {
-  background-color: cornflowerblue;
+  background-color: #5398dd;
 }
 
 .MuiTableCell-head {
@@ -121,6 +144,7 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
 
   &__circle {
     display: flex;
@@ -187,7 +211,7 @@ h6 {
   width: 100%;
   text-align: center;
   animation: blink 1s forwards;
-  animation-iteration-count: 5;
+  animation-iteration-count: 3;
 }
 @keyframes blink {
   0% {
@@ -210,5 +234,13 @@ h6 {
 }
 .loading {
   animation: blink 700ms infinite forwards;
-  color: #1976d2;
+  color: #1976d2 !;
+}
+
+.MuiCircularProgress-colorPrimary {
+  color: #1976d2 !important;
+}
+
+.MuiCircularProgress-circleIndeterminate {
+  color: #1976d2 !important;
 }

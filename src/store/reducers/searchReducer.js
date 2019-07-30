@@ -1,4 +1,4 @@
-import { SEARCH_ITEM } from "../actions/";
+import { SEARCH_ITEM } from "../actions/types";
 
 const initialState = "Tel-Aviv";
 

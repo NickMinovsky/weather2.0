@@ -1,4 +1,4 @@
-import { ADD_FAV, DELETE_FAV } from "../actions/";
+import { ADD_FAV, DELETE_FAV } from "../actions/types";
 
 const favoritesReducer = (state = [], { type, payload }) => {
   switch (type) {
