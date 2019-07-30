@@ -5,10 +5,12 @@ import { bindActionCreators } from "redux";
 import { addFav } from "../../../store/actions/";
 import isAdded from "../../../services/DuplicateValidation";
 
+import { Button } from "@material-ui/core";
+
 const Today = props => {
   const { data } = props;
   if (data.location === undefined) {
-    return <h1>Loading...</h1>;
+    return <p> </p>;
   }
 
   const addFavHandler = () => {
@@ -33,17 +35,25 @@ const Today = props => {
       <div className="current-weather__circle">
         <h1 className="current-weather__circle-title">{location.name}</h1>
         <p className="current-weather__circle-desc">{current.condition.text}</p>
+        <img
+          src={current.condition.icon}
+          alt="weather-icon"
+          className="current-weather__image"
+        />
         <p className="current-weather__circle-degree">
-          {current.temp_c} <sup>o</sup>c
+          {current.temp_c} <sup className="o">o</sup>c
         </p>
-        <button
+        <Button
+          className="fav-btn"
+          variant="contained"
+          color="primary"
           onClick={() => {
             addFavHandler();
           }}
         >
           Add Fav
-        </button>
-        <p />
+        </Button>
+        <p className="fav-error">{props.error}</p>
       </div>
     </div>
   );
@@ -51,6 +61,7 @@ const Today = props => {
 
 const mapStateToProps = state => ({
   data: state.apiData.data,
+  error: state.apiData.error.message,
   favList: state.favoritesList
 });
 

@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { inputError } from "../../store/actions";
 import searchItemAction from "../../store/actions";
 import fetchApiAction from "../../services/FetchApi";
-import TextField from "@material-ui/core/TextField";
+
+import { TextField } from "@material-ui/core/";
 
 class Nav extends Component {
   componentDidMount() {
@@ -34,13 +35,14 @@ class Nav extends Component {
     e.preventDefault();
     const { fetchApi, searchTerm } = this.props;
     fetchApi(searchTerm);
+    document.getElementById("search-form").reset();
   };
 
   render() {
     const { error } = this.props;
     return (
       <div className="navbar">
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit} id="search-form">
           <TextField
             onChange={this.onChange}
             onKeyPress={this.isInputValid}
@@ -50,15 +52,19 @@ class Nav extends Component {
             helperText={error}
           />
         </form>
-        <Link to="/">Home</Link>
-        <Link to="/favorites">Favs</Link>
+        <Link className="link" to="/">
+          Home
+        </Link>
+        <Link className="link" to="/favorites">
+          Favs
+        </Link>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  searchTerm: state.searchTerm.searchItem,
+  searchTerm: state.searchTerm,
   error: state.errors.inputError
 });
 

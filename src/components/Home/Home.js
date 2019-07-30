@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
 
 import Today from "./Today/Today";
 import Table from "./Table/Table";
 import Loader from "../../containers/Loader/Loader";
+import Container from "@material-ui/core/Container";
 
 class Home extends Component {
   state = {};
@@ -17,7 +17,9 @@ class Home extends Component {
             <Today /> <Table />
           </div>
         ) : (
-          <Loader />
+          <div>
+            <Loader />
+          </div>
         )}
       </Container>
     );

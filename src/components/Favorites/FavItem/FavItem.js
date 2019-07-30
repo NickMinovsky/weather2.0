@@ -1,26 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
-import { deleteFav, reLoad } from "../../../store/actions/";
+import { deleteFav, reload } from "../../../store/actions/";
 import fetchApiAction from "../../../services/FetchApi";
 import searchItemAction from "../../../store/actions/";
 
 const FavItem = props => {
   const searchFav = async cityId => {
-    const { fetchApi, reLoad } = props;
+    const { fetchApi } = props;
     try {
       await fetchApi(cityId);
-      reLoad();
+      props.history.push("/");
     } catch (error) {
-      console.log(error.messge);
+      console.log(error.message);
     }
   };
-  const { reloadState } = props;
-  if (reloadState) {
-    return <Redirect to="/" />;
-  }
+
 
   return (
     <div>
@@ -49,7 +51,7 @@ const FavItem = props => {
 
 const mapStateToProps = state => ({
   searchTerm: state.searchTerm.searchItem,
-  reloadState: state.redirect.reload
+  reloadState: state.redirect
 });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -57,11 +59,10 @@ const mapDispatchToProps = dispatch =>
       deleteFav: deleteFav,
       searchItem: searchItemAction,
       fetchApi: fetchApiAction,
-      reLoad: reLoad
     },
     dispatch
   );
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FavItem);
+)(withRouter(FavItem));

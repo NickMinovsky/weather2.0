@@ -14,6 +14,7 @@ const fetchApi = term => {
           throw res.error;
         }
         dispatch(getDataSuccess(res));
+        dispatch(getDataError(""));
         console.log("FETCED");
         return res;
       })

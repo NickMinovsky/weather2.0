@@ -12,9 +12,10 @@ export default function CircularIndeterminate() {
   const classes = useStyles();
 
   return (
-    <div className="current-weather">
-      <div>
+    <div className="current-weather__circle">
+      <div className="loader">
         <CircularProgress className={classes.progress} />
+        <p className="loading">Loading</p>
       </div>
     </div>
   );

@@ -15,16 +15,16 @@ import {
 const ForecastTable = props => {
   const { data } = props;
   if (data.forecast === undefined) {
-    return <Loader />;
+    return <p> </p>;
   }
   return (
-    <span>
+    <div className="current-table">
       <h1 className="subtitle">Your Weekley Forecast:</h1>
       <Paper className="table">
-        <Table className="table-main">
+        <Table className="table-main" size="small">
           <TableHead>
             <TableRow className="table-row">
-              <TableCell>Day of the week</TableCell>
+              <TableCell>Day</TableCell>
               <TableCell align="right">Status</TableCell>
               <TableCell align="right">Degress</TableCell>
               <TableCell align="right">Weather</TableCell>
@@ -44,15 +44,17 @@ const ForecastTable = props => {
                       className="weather-icon"
                     />
                   </TableCell>
-                  <TableCell align="right">{day.day.maxtemp_c}</TableCell>
-                  <TableCell align="right">{day.day.condition.text}</TableCell>
+                  <TableCell align="right">
+                    {day.day.maxtemp_c} <sup>o</sup>c
+                  </TableCell>
+                  <TableCell align="right">{day.day.condition.text} </TableCell>
                 </TableRow>
               );
             })}
           </TableBody>
         </Table>
       </Paper>
-    </span>
+    </div>
   );
 };
 

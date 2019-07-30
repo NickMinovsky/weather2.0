@@ -8,14 +8,29 @@ body {
   margin: 0 !important;
 }
 
+div#root {
+  height: 100vh;
+}
+
 // =================================== Navbar ===================================
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h6 {
   font-weight: 300 !important;
 }
 
+.MuiContainer-maxWidthMd {
+  height: 100% !important;
+  // background-color: aquamarine;
+}
 .MuiContainer-maxWidthSm {
   background-color: #e3f2fd;
-  height: 100vh;
+  height: 100vh !important;
 }
 
 .MuiAppBar-colorPrimary {
@@ -52,6 +67,11 @@ h6 {
   &-root {
     width: 25%;
   }
+  &-head {
+    @media screen and (max-width: 599px) {
+      height: 10px !important;
+    }
+  }
 }
 
 .table {
@@ -60,6 +80,39 @@ h6 {
   &-main {
     min-height: 650px;
   }
+}
+
+.mobile-table-row {
+  @media screen and (max-width: 599px) {
+    display: none;
+  }
+}
+
+.MuiTableCell-root {
+  @media screen and (max-width: 599px) {
+    letter-spacing: -0.9999px !important;
+  }
+}
+
+.MuiTableCell-sizeSmall {
+  @media screen and (max-width: 599px) {
+    padding: 6px 24px 0px 16px !important;
+  }
+}
+
+.MuiTableCell-sizeSmall:last-child {
+  @media screen and (max-width: 599px) {
+    padding-right: 16px;
+    height: 100px;
+  }
+}
+
+.MuiTableHead-root {
+  background-color: cornflowerblue;
+}
+
+.MuiTableCell-head {
+  color: #eee !important;
 }
 
 // =================================== Current weather ===================================
@@ -74,7 +127,6 @@ h6 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
     height: 50vh;
     margin: 5rem;
     padding: 0;
@@ -86,22 +138,30 @@ h6 {
 
     &-desc {
       line-height: 0;
-      position: relative;
-      left: -28px;
       font-family: "Poiret One", cursive;
     }
 
-    & &-degree {
+    &-degree {
       font-size: 3.5rem;
       margin: 2rem auto;
       font-weight: lighter;
     }
+  }
+
+  &__image {
+    margin-bottom: -40px;
+    padding: 10px;
   }
 }
 
 .fav-btn {
   background-color: #5398dd !important;
   margin-bottom: 1rem !important;
+  border-radius: 25px !important;
+}
+
+.o {
+  font-size: 30px;
 }
 
 // =================================== Forecast weather =========================
@@ -123,6 +183,12 @@ h6 {
   opacity: 0;
 }
 
+.fav-error {
+  width: 100%;
+  text-align: center;
+  animation: blink 1s forwards;
+  animation-iteration-count: 5;
+}
 @keyframes blink {
   0% {
     opacity: 0;
@@ -137,4 +203,12 @@ h6 {
   }
 }
 
-// =================================== Material Fixes ===================================
+// =================================== Loading ===================================
+
+.loader {
+  text-align: center;
+}
+.loading {
+  animation: blink 700ms infinite forwards;
+  color: #1976d2;
+}

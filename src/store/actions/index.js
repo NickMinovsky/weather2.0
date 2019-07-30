@@ -52,8 +52,3 @@ export const favError = message => ({
   type: FAV_ERROR,
   payload: message
 });
-
-// Redirect
-export const reLoad = () => ({
-  type: RELOAD
-});
