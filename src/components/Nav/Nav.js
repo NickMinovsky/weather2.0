@@ -26,6 +26,7 @@ class Nav extends Component {
     const re = /[a-zA-Z ]+/g;
     if (!re.test(e.key)) {
       inputError("Please use English letters only");
+      e.preventDefault();
     } else {
       inputError(" ");
     }
@@ -46,7 +47,7 @@ class Nav extends Component {
           <form onSubmit={this.onSubmit} id="search-form">
             <TextField
               onChange={this.onChange}
-              onKeyPress={this.isInputValid}
+              onKeyDown={this.isInputValid}
               label="Search a city"
               type="search"
               margin="normal"

@@ -1,12 +1,6 @@
 // duplicate validation
 const isAdded = (list, cityName) => {
-  for (let i = 0; i < list.length; i++) {
-    if (list[i].name === cityName) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  return list.find(city => city.name == cityName);
 };
 
 export default isAdded;

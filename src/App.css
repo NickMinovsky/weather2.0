@@ -17,11 +17,11 @@ div#root {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0 16px;
 }
 
@@ -55,13 +55,14 @@ h6 {
   height: 10px !important;
   color: red !important;
   -webkit-animation: blink 1s infinite forwards;
-          animation: blink 1s infinite forwards;
+  animation: blink 1s infinite forwards;
 }
 
 @-webkit-keyframes blink {
   from {
     opacity: 0.1;
   }
+
   to {
     opacity: 1;
   }
@@ -71,6 +72,7 @@ h6 {
   from {
     opacity: 0.1;
   }
+
   to {
     opacity: 1;
   }
@@ -159,14 +161,14 @@ h6 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 1.5rem;
 }
 
@@ -176,14 +178,14 @@ h6 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 50vh;
   margin: 5rem;
   padding: 0;
@@ -229,7 +231,7 @@ h6 {
   margin: 0;
   color: #5398dd;
   -webkit-animation: blink 2s forwards;
-          animation: blink 2s forwards;
+  animation: blink 2s forwards;
 }
 
 .alert-off {
@@ -242,18 +244,20 @@ h6 {
   width: 100%;
   text-align: center;
   -webkit-animation: blink 1s forwards;
-          animation: blink 1s forwards;
+  animation: blink 1s forwards;
   -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
+  animation-iteration-count: 3;
 }
 
 @keyframes blink {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -265,7 +269,8 @@ h6 {
 
 .loading {
   -webkit-animation: blink 700ms infinite forwards;
-          animation: blink 700ms infinite forwards;
+  animation: blink 700ms infinite forwards;
   color: #1976d2 !important;
 }
+
 /*# sourceMappingURL=App.css.map */
