@@ -1,0 +1,64 @@
+// =================================== Navbar ===================================
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+h6 {
+  font-weight: 300 !important;
+}
+
+.MuiContainer-maxWidthMd {
+  height: 100% !important;
+  // background-color: aquamarine;
+}
+.MuiContainer-maxWidthSm {
+  background-color: #e3f2fd;
+  height: 100vh !important;
+}
+
+.MuiAppBar-colorPrimary {
+  color: #bbdefb !important;
+  background-color: #1976d2 !important;
+}
+
+.MuiInput-underline:after {
+  border-color: #1976d2 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #1976d2 !important;
+}
+
+.MuiFormHelperText-root {
+  height: 10px !important;
+  color: red !important;
+  animation: blink 1s infinite forwards;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.link {
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #5fa4e9;
+  opacity: 0.8;
+  transition: opacity 300ms, color 300ms;
+  &:hover {
+    color: #2b80d4;
+    opacity: 1;
+  }
+}

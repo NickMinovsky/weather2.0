@@ -15,9 +15,8 @@ const Favorites = props => {
         <ul>
           {favList.map((city, index) => {
             return (
-              <li>
+              <li key={index}>
                 <FavItem
-                  key={index}
                   name={city.name}
                   temp={city.temp}
                   condition={city.condition}

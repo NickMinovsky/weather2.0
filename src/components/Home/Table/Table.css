@@ -1,0 +1,61 @@
+.subtitle {
+  font-weight: 300;
+  text-align: center;
+}
+
+.MuiTableCell-alignRight {
+  text-align: center !important;
+}
+
+.MuiTableCell-root {
+  width: 25%;
+}
+
+@media screen and (max-width: 599px) {
+  .MuiTableCell-head {
+    height: 10px !important;
+  }
+}
+
+.table {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.table-main {
+  min-height: 650px;
+}
+
+@media screen and (max-width: 599px) {
+  .mobile-table-row {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .MuiTableCell-root {
+    letter-spacing: -0.9999px !important;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .MuiTableCell-sizeSmall {
+    padding: 6px 24px 0px 16px !important;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .MuiTableCell-sizeSmall:last-child {
+    padding-right: 16px;
+    height: 100px;
+  }
+}
+
+.MuiTableHead-root {
+  background-color: #5398dd;
+}
+
+.MuiTableCell-head {
+  color: #eee !important;
+}
+/*# sourceMappingURL=Table.css.map */

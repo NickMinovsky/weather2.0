@@ -7,6 +7,7 @@ import { inputError } from "../../store/actions";
 import searchItemAction from "../../store/actions";
 import fetchApiAction from "../../services/FetchApi";
 
+import "./Nav.css";
 import { TextField } from "@material-ui/core/";
 
 class Nav extends Component {

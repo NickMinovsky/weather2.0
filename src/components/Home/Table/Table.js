@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import moment from "moment";
 
-import Loader from "../../../containers/Loader/Loader";
+import "./Table.css";
 import {
   Table,
   TableBody,

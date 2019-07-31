@@ -12,226 +12,12 @@ div#root {
   height: 100vh;
 }
 
-.navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 16px;
-}
-
-h6 {
-  font-weight: 300 !important;
-}
-
-.MuiContainer-maxWidthMd {
-  height: 100% !important;
-}
-
-.MuiContainer-maxWidthSm {
-  background-color: #e3f2fd;
-  height: 100vh !important;
-}
-
-.MuiAppBar-colorPrimary {
-  color: #bbdefb !important;
-  background-color: #1976d2 !important;
-}
-
-.MuiInput-underline:after {
-  border-color: #1976d2 !important;
-}
-
-.MuiFormLabel-root.Mui-focused {
-  color: #1976d2 !important;
-}
-
-.MuiFormHelperText-root {
-  height: 10px !important;
-  color: red !important;
-  -webkit-animation: blink 1s infinite forwards;
-  animation: blink 1s infinite forwards;
-}
-
-@-webkit-keyframes blink {
-  from {
-    opacity: 0.1;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes blink {
-  from {
-    opacity: 0.1;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.link {
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 16px;
-  margin-bottom: 8px;
-  color: #5fa4e9;
-  opacity: 0.8;
-  -webkit-transition: opacity 300ms, color 300ms;
-  transition: opacity 300ms, color 300ms;
-}
-
-.link:hover {
-  color: #2b80d4;
-  opacity: 1;
-}
-
-.subtitle {
-  font-weight: 300;
-  text-align: center;
-}
-
-.MuiTableCell-alignRight {
-  text-align: center !important;
-}
-
-.MuiTableCell-root {
-  width: 25%;
-}
-
-@media screen and (max-width: 599px) {
-  .MuiTableCell-head {
-    height: 10px !important;
-  }
-}
-
-.table {
-  overflow-x: auto;
-  margin-bottom: 2rem;
-}
-
-.table-main {
-  min-height: 650px;
-}
-
-@media screen and (max-width: 599px) {
-  .mobile-table-row {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  .MuiTableCell-root {
-    letter-spacing: -0.9999px !important;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  .MuiTableCell-sizeSmall {
-    padding: 6px 24px 0px 16px !important;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  .MuiTableCell-sizeSmall:last-child {
-    padding-right: 16px;
-    height: 100px;
-  }
-}
-
-.MuiTableHead-root {
-  background-color: #5398dd;
-}
-
-.MuiTableCell-head {
-  color: #eee !important;
-}
-
-.current-weather {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 1.5rem;
-}
-
-.current-weather__circle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 50vh;
-  margin: 5rem;
-  padding: 0;
-}
-
-.current-weather__circle-title {
-  font-weight: 300;
-  margin-bottom: 0;
-}
-
-.current-weather__circle-desc {
-  line-height: 0;
-  font-family: "Poiret One", cursive;
-}
-
-.current-weather__circle-degree {
-  font-size: 3.5rem;
-  margin: 2rem auto;
-  font-weight: lighter;
-}
-
-.current-weather__image {
-  margin-bottom: -40px;
-  padding: 10px;
-}
-
-.fav-btn {
-  background-color: #5398dd !important;
-  margin-bottom: 1rem !important;
-  border-radius: 25px !important;
-}
-
-.o {
-  font-size: 30px;
-}
-
-.weather-icon {
-  width: 30px;
-}
-
 .alert {
   height: 20px;
   margin: 0;
   color: #5398dd;
   -webkit-animation: blink 2s forwards;
-  animation: blink 2s forwards;
+          animation: blink 2s forwards;
 }
 
 .alert-off {
@@ -244,33 +30,32 @@ h6 {
   width: 100%;
   text-align: center;
   -webkit-animation: blink 1s forwards;
-  animation: blink 1s forwards;
+          animation: blink 1s forwards;
   -webkit-animation-iteration-count: 3;
-  animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes blink {
   0% {
     opacity: 0;
   }
-
   50% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
 }
-
-.loader {
-  text-align: center;
-}
-
-.loading {
-  -webkit-animation: blink 700ms infinite forwards;
-  animation: blink 700ms infinite forwards;
-  color: #1976d2 !important;
-}
-
 /*# sourceMappingURL=App.css.map */

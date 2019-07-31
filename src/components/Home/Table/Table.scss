@@ -1,0 +1,60 @@
+// =================================== Table ===================================
+.subtitle {
+  font-weight: 300;
+  text-align: center;
+}
+
+.MuiTableCell {
+  &-alignRight {
+    text-align: center !important;
+  }
+  &-root {
+    width: 25%;
+  }
+  &-head {
+    @media screen and (max-width: 599px) {
+      height: 10px !important;
+    }
+  }
+}
+
+.table {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  &-main {
+    min-height: 650px;
+  }
+}
+
+.mobile-table-row {
+  @media screen and (max-width: 599px) {
+    display: none;
+  }
+}
+
+.MuiTableCell-root {
+  @media screen and (max-width: 599px) {
+    letter-spacing: -0.9999px !important;
+  }
+}
+
+.MuiTableCell-sizeSmall {
+  @media screen and (max-width: 599px) {
+    padding: 6px 24px 0px 16px !important;
+  }
+}
+
+.MuiTableCell-sizeSmall:last-child {
+  @media screen and (max-width: 599px) {
+    padding-right: 16px;
+    height: 100px;
+  }
+}
+
+.MuiTableHead-root {
+  background-color: #5398dd;
+}
+
+.MuiTableCell-head {
+  color: #eee !important;
+}

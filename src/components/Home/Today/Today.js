@@ -5,7 +5,10 @@ import { bindActionCreators } from "redux";
 import { addFav } from "../../../store/actions/";
 import isAdded from "../../../services/DuplicateValidation";
 
+import "./Today.css";
 import { Button } from "@material-ui/core";
+import Favorite from "@material-ui/icons/Favorite";
+import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 const Today = props => {
   const { data } = props;
@@ -43,16 +46,25 @@ const Today = props => {
         <p className="current-weather__circle-degree">
           {current.temp_c} <sup className="o">o</sup>c
         </p>
-        <Button
-          className="fav-btn"
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            addFavHandler();
-          }}
-        >
-          Add Fav
-        </Button>
+        <div>
+          <Button
+            className="fav-btn"
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              addFavHandler();
+            }}
+          >
+            Add Fav
+          </Button>
+          <div className="fav-icon">
+            {isAdded(props.favList, location.name) ? (
+              <Favorite className="fav-icon__animate" />
+            ) : (
+              <FavoriteBorder />
+            )}
+          </div>
+        </div>
         <p className="fav-error">{props.error}</p>
       </div>
     </div>

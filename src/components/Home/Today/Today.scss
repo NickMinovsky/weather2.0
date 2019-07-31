@@ -1,0 +1,77 @@
+// =================================== Current weather ===================================
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+
+  &__circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // height: 100vh;
+    width: 100%;
+    margin: 5rem;
+    padding: 0;
+
+    &-title {
+      font-weight: 300;
+      margin-bottom: 0;
+      text-align: center;
+      @media screen and (max-width: 599px) {
+        font-size: 2.3rem;
+      }
+    }
+
+    &-desc {
+      line-height: 0;
+      font-family: "Poiret One", cursive;
+    }
+
+    &-degree {
+      font-size: 3.5rem;
+      margin: 2rem auto;
+      font-weight: lighter;
+    }
+  }
+
+  &__image {
+    margin-bottom: -40px;
+    padding: 10px;
+  }
+}
+
+.weather-icon {
+  width: 30px;
+}
+
+// ===================================== add Fav animation =============================
+
+.fav-btn {
+  background-color: #5398dd !important;
+  margin-bottom: 1rem !important;
+  border-radius: 25px !important;
+}
+
+.o {
+  font-size: 30px;
+}
+
+.fav-icon {
+  color: rgb(255, 49, 100);
+  text-align: center;
+  &__animate {
+    animation: spin 900ms infinite linear;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(-360deg);
+  }
+}

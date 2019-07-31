@@ -1,0 +1,107 @@
+.current-weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+}
+
+.current-weather__circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 5rem;
+  padding: 0;
+}
+
+.current-weather__circle-title {
+  font-weight: 300;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+  .current-weather__circle-title {
+    font-size: 2.3rem;
+  }
+}
+
+.current-weather__circle-desc {
+  line-height: 0;
+  font-family: "Poiret One", cursive;
+}
+
+.current-weather__circle-degree {
+  font-size: 3.5rem;
+  margin: 2rem auto;
+  font-weight: lighter;
+}
+
+.current-weather__image {
+  margin-bottom: -40px;
+  padding: 10px;
+}
+
+.weather-icon {
+  width: 30px;
+}
+
+.fav-btn {
+  background-color: #5398dd !important;
+  margin-bottom: 1rem !important;
+  border-radius: 25px !important;
+}
+
+.o {
+  font-size: 30px;
+}
+
+.fav-icon {
+  color: #ff3164;
+  text-align: center;
+}
+
+.fav-icon__animate {
+  -webkit-animation: spin 900ms infinite linear;
+          animation: spin 900ms infinite linear;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+  }
+}
+/*# sourceMappingURL=Today.css.map */

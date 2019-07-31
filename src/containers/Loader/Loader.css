@@ -1,0 +1,18 @@
+.loader {
+  text-align: center;
+}
+
+.loading {
+  -webkit-animation: blink 700ms infinite forwards;
+          animation: blink 700ms infinite forwards;
+  color: #1976d2 !important;
+}
+
+.MuiCircularProgress-colorPrimary {
+  color: #1976d2 !important;
+}
+
+.MuiCircularProgress-circleIndeterminate {
+  color: #1976d2 !important;
+}
+/*# sourceMappingURL=Loader.css.map */
