@@ -39,6 +39,7 @@ body {
 }
 
 .fav-error {
+  color: red;
   width: 100%;
   text-align: center;
   -webkit-animation: blink 1s forwards;

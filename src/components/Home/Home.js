@@ -10,22 +10,21 @@ import Container from "@material-ui/core/Container";
 
 class Home extends Component {
   state = {};
-
-  componentDidMount() {
-    AOS.init({
-      duration: 2000
-    });
-  }
   render() {
     const { pending } = this.props;
     return (
       <Container maxWidth="xl" className="main-container">
         {!pending ? (
           <div className="god-container">
-            <div className="test" data-aos="fade-up">
+            <div className="test">
               <Today />
             </div>{" "}
-            <div data-aos="fade-down">
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              data-aos-offest="500"
+              data-aos-easing="ease-in-back"
+            >
               <Table />{" "}
             </div>
           </div>

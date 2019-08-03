@@ -6,7 +6,7 @@
 
 html,
 body {
-  background-color: #f0f0d8 !important;
+  background-color: #ececde !important;
   font-family: "Patrick Hand SC", cursive !important;
 }
 
@@ -164,6 +164,25 @@ body section button {
 
 .weather-icon {
   width: 30px;
+}
+
+.fav-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  border-color: #41403e;
+  font-family: "Patrick Hand SC", cursive !important;
+  background-color: #5fa4e9;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  outline: none;
+  -webkit-box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+          box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 .fav-icon {

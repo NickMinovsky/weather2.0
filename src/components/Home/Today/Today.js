@@ -55,7 +55,7 @@ const Today = props => {
             addFavHandler();
           }}
         >
-          Add
+          add
           <div className="fav-icon">
             {isAdded(props.favList, location.name) ? (
               <Favorite className="fav-icon__animate" />

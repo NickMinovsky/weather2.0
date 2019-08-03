@@ -1,210 +1,99 @@
-Copy html .fulfilling-bouncing-circle-spinner,
-.fulfilling-bouncing-circle-spinner * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.loader {
+  width: 100%;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.fulfilling-bouncing-circle-spinner {
-  height: 60px;
-  width: 60px;
-  position: relative;
-  -webkit-animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
-          animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
+.loader-title {
+  font-size: 3rem;
+  letter-spacing: 1rem;
 }
 
-.fulfilling-bouncing-circle-spinner .orbit {
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  border: calc(60px * 0.03) solid #ff1d5e;
-  -webkit-animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
-          animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
+.load-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 200px;
 }
 
-.fulfilling-bouncing-circle-spinner .circle {
-  height: 60px;
-  width: 60px;
-  color: #ff1d5e;
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  border: calc(60px * 0.1) solid #ff1d5e;
-  -webkit-animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
-          animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
-  -webkit-transform: rotate(0deg) scale(1);
-          transform: rotate(0deg) scale(1);
+.svg {
+  width: 5.75em;
+  height: 200px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
 }
 
-@-webkit-keyframes fulfilling-bouncing-circle-spinner-animation {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
+circle {
+  fill: none;
+  stroke: #fc2f70;
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
 
-@keyframes fulfilling-bouncing-circle-spinner-animation {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
+@keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
 
-@-webkit-keyframes fulfilling-bouncing-circle-spinner-orbit-animation {
+@-webkit-keyframes dash {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
   }
   50% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  62.5% {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-  75% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  87.5% {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    stroke-dashoffset: -125px;
   }
 }
 
-@keyframes fulfilling-bouncing-circle-spinner-orbit-animation {
+@keyframes dash {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
   }
   50% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  62.5% {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-  75% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  87.5% {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@-webkit-keyframes fulfilling-bouncing-circle-spinner-circle-animation {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    border-color: transparent;
-    border-top-color: inherit;
-  }
-  16.7% {
-    border-color: transparent;
-    border-top-color: initial;
-    border-right-color: initial;
-  }
-  33.4% {
-    border-color: transparent;
-    border-top-color: inherit;
-    border-right-color: inherit;
-    border-bottom-color: inherit;
-  }
-  50% {
-    border-color: inherit;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  62.5% {
-    border-color: inherit;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-  }
-  75% {
-    border-color: inherit;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  87.5% {
-    border-color: inherit;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-  }
-  100% {
-    border-color: transparent;
-    border-top-color: inherit;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes fulfilling-bouncing-circle-spinner-circle-animation {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    border-color: transparent;
-    border-top-color: inherit;
-  }
-  16.7% {
-    border-color: transparent;
-    border-top-color: initial;
-    border-right-color: initial;
-  }
-  33.4% {
-    border-color: transparent;
-    border-top-color: inherit;
-    border-right-color: inherit;
-    border-bottom-color: inherit;
-  }
-  50% {
-    border-color: inherit;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  62.5% {
-    border-color: inherit;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-  }
-  75% {
-    border-color: inherit;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  87.5% {
-    border-color: inherit;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-  }
-  100% {
-    border-color: transparent;
-    border-top-color: inherit;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    stroke-dashoffset: -125px;
   }
 }
 /*# sourceMappingURL=Loader.css.map */

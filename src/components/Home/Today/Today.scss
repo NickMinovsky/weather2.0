@@ -5,7 +5,7 @@
 }
 html,
 body {
-  background-color: #f0f0d8 !important;
+  background-color: #ececde !important;
   font-family: "Patrick Hand SC", cursive !important;
   & h1 {
     text-align: center;
@@ -115,9 +115,22 @@ body {
 }
 
 // ===================================== add Fav animation =============================
-
+.fav-btn {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border-color: #41403e;
+  font-family: "Patrick Hand SC", cursive !important;
+  background-color: #5fa4e9;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
 .fav-icon {
   color: rgb(255, 49, 100);
+
   text-align: center;
   &__animate {
     animation: spin 900ms infinite linear;
