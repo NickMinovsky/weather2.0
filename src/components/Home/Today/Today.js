@@ -35,7 +35,7 @@ const Today = props => {
   const { current, location } = data;
   return (
     <div className="current-weather">
-      <div className="current-weather__circle">
+      <div className="current-weather__circle lined thin">
         <h1 className="current-weather__circle-title">{location.name}</h1>
         <p className="current-weather__circle-desc">{current.condition.text}</p>
         <img
@@ -43,20 +43,19 @@ const Today = props => {
           alt="weather-icon"
           className="current-weather__image"
         />
-        <p className="current-weather__circle-degree">
-          {current.temp_c} <sup className="o">o</sup>c
-        </p>
-        <div>
-          <Button
-            className="fav-btn"
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              addFavHandler();
-            }}
-          >
-            Add Fav
-          </Button>
+        <p className="current-weather__circle-degree">{current.temp_c} °C</p>
+      </div>
+      <p className="fav-error">{props.error}</p>
+      <div>
+        <button
+          className="fav-btn"
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            addFavHandler();
+          }}
+        >
+          Add
           <div className="fav-icon">
             {isAdded(props.favList, location.name) ? (
               <Favorite className="fav-icon__animate" />
@@ -64,8 +63,7 @@ const Today = props => {
               <FavoriteBorder />
             )}
           </div>
-        </div>
-        <p className="fav-error">{props.error}</p>
+        </button>
       </div>
     </div>
   );

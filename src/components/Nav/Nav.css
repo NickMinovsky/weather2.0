@@ -21,7 +21,6 @@ h6 {
 
 .MuiContainer-maxWidthSm {
   background-color: #e3f2fd;
-  height: 100vh !important;
 }
 
 .MuiAppBar-colorPrimary {
@@ -33,15 +32,50 @@ h6 {
   border-color: #1976d2 !important;
 }
 
+.MuiFormLabel-root {
+  font-family: "Patrick Hand SC", cursive !important;
+}
+
 .MuiFormLabel-root.Mui-focused {
   color: #1976d2 !important;
+  font-family: "Patrick Hand SC", cursive !important;
+}
+
+.MuiInputBase-input {
+  width: 500px !important;
+}
+
+@media screen and (max-width: 599px) {
+  .MuiInputBase-input {
+    width: 200px !important;
+  }
 }
 
 .MuiFormHelperText-root {
+  font-family: "Patrick Hand SC", cursive !important;
+  text-transform: lowercase !important;
   height: 10px !important;
   color: red !important;
   -webkit-animation: blink 1s infinite forwards;
           animation: blink 1s infinite forwards;
+  font-size: 1.5rem !important;
+}
+
+@media screen and (max-width: 599px) {
+  .MuiFormHelperText-root {
+    font-size: 0.9rem !important;
+  }
+}
+
+.MuiInputBase-inputTypeSearch {
+  font-size: 2rem !important;
+  font-family: "Patrick Hand SC", cursive !important;
+}
+
+@media screen and (max-width: 599px) {
+  .MuiInputBase-inputTypeSearch {
+    font-size: 1.5rem !important;
+  }
 }
 
 @-webkit-keyframes blink {
@@ -62,19 +96,74 @@ h6 {
   }
 }
 
+.right {
+  width: 250px;
+}
+
+@media screen and (max-width: 599px) {
+  .right {
+    width: 120px;
+  }
+}
+
 .link {
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 25px;
   margin-top: 16px;
   margin-bottom: 8px;
+  width: 100%;
   color: #5fa4e9;
+  font-size: 1.5rem;
+  font-weight: 300;
   opacity: 0.8;
-  -webkit-transition: opacity 300ms, color 300ms;
-  transition: opacity 300ms, color 300ms;
+  -webkit-transition: opacity 300ms, color 300ms, font-weight 300ms;
+  transition: opacity 300ms, color 300ms, font-weight 300ms;
+}
+
+@media screen and (max-width: 599px) {
+  .link {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .link {
+    font-size: 1rem;
+  }
 }
 
 .link:hover {
   color: #2b80d4;
   opacity: 1;
+  font-weight: 700;
+}
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #2b80d4;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+a:hover::before {
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 /*# sourceMappingURL=Nav.css.map */

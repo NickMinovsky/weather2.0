@@ -8,8 +8,8 @@ import {
   withRouter
 } from "react-router-dom";
 
-import { deleteFav, reload } from "../../../store/actions/";
-import fetchApiAction from "../../../services/FetchApi";
+import { deleteFav } from "../../../store/actions/";
+import fetchApiAction from "../../../services/fetchApi";
 import searchItemAction from "../../../store/actions/";
 
 const FavItem = props => {
@@ -23,13 +23,10 @@ const FavItem = props => {
     }
   };
 
-
   return (
     <div>
       <p>{props.name}</p>
-      <p>
-        {props.temp} <sup>o</sup>c
-      </p>
+      <p>{props.temp}°C</p>
       <p>{props.condition}</p>
       <button
         onClick={() => {
@@ -58,7 +55,7 @@ const mapDispatchToProps = dispatch =>
     {
       deleteFav: deleteFav,
       searchItem: searchItemAction,
-      fetchApi: fetchApiAction,
+      fetchApi: fetchApiAction
     },
     dispatch
   );

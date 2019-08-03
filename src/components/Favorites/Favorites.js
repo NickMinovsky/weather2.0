@@ -3,12 +3,13 @@ import { connect } from "react-redux";
 
 import FavItem from "./FavItem/FavItem";
 import Container from "@material-ui/core/Container";
+import "./Favorites.css";
 
 const Favorites = props => {
   const { favList } = props;
   return (
-    <Container maxWidth="md" className="main-container">
-      <div>
+    <Container maxWidth="lg">
+      <div className="fav-content">
         <p>
           {favList.length === 0 ? "You have no favorites" : "Your favorites"}
         </p>
@@ -20,6 +21,7 @@ const Favorites = props => {
                   name={city.name}
                   temp={city.temp}
                   condition={city.condition}
+                  icon={city.icon}
                 />
               </li>
             );

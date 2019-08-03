@@ -6,7 +6,7 @@ const fetchApi = term => {
   return dispatch => {
     dispatch(getDataPending());
     fetch(
-      `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${term}&days=7`
+      `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${term}&days=6`
     )
       .then(res => res.json())
       .then(res => {

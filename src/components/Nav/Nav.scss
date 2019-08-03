@@ -13,11 +13,9 @@ h6 {
 
 .MuiContainer-maxWidthMd {
   height: 100% !important;
-  // background-color: aquamarine;
 }
 .MuiContainer-maxWidthSm {
   background-color: #e3f2fd;
-  height: 100vh !important;
 }
 
 .MuiAppBar-colorPrimary {
@@ -29,16 +27,38 @@ h6 {
   border-color: #1976d2 !important;
 }
 
+.MuiFormLabel-root {
+  font-family: "Patrick Hand SC", cursive !important;
+}
 .MuiFormLabel-root.Mui-focused {
   color: #1976d2 !important;
+  font-family: "Patrick Hand SC", cursive !important;
 }
-
+.MuiInputBase-input {
+  width: 500px !important;
+  @media screen and (max-width: 599px) {
+    width: 200px !important;
+  }
+}
 .MuiFormHelperText-root {
+  font-family: "Patrick Hand SC", cursive !important;
+  text-transform: lowercase !important;
   height: 10px !important;
   color: red !important;
   animation: blink 1s infinite forwards;
+  font-size: 1.5rem !important;
+  @media screen and(max-width: 599px) {
+    font-size: 0.9rem !important;
+  }
 }
 
+.MuiInputBase-inputTypeSearch {
+  font-size: 2rem !important;
+  font-family: "Patrick Hand SC", cursive !important;
+  @media screen and(max-width: 599px) {
+    font-size: 1.5rem !important;
+  }
+}
 @keyframes blink {
   from {
     opacity: 0.1;
@@ -49,16 +69,53 @@ h6 {
   }
 }
 
+.right {
+  width: 250px;
+  @media screen and (max-width: 599px) {
+    width: 120px;
+  }
+}
 .link {
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 25px;
+  @media screen and (max-width: 599px) {
+    margin-right: 10px;
+  }
   margin-top: 16px;
   margin-bottom: 8px;
+  width: 100%;
   color: #5fa4e9;
+  font-size: 1.5rem;
+  font-weight: 300;
+  @media screen and (max-width: 599px) {
+    font-size: 1rem;
+  }
   opacity: 0.8;
-  transition: opacity 300ms, color 300ms;
+  transition: opacity 300ms, color 300ms, font-weight 300ms;
   &:hover {
     color: #2b80d4;
     opacity: 1;
+    font-weight: 700;
   }
+}
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #2b80d4;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+a:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
 }

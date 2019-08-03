@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { inputError } from "../../store/actions";
 import searchItemAction from "../../store/actions";
-import fetchApiAction from "../../services/FetchApi";
+import fetchApiAction from "../../services/fetchApi";
 
 import "./Nav.css";
 import { TextField } from "@material-ui/core/";
@@ -49,7 +49,7 @@ class Nav extends Component {
             <TextField
               onChange={this.onChange}
               onKeyDown={this.isInputValid}
-              label="Search a city"
+              label="Enter a city name..."
               type="search"
               margin="normal"
               helperText={error}

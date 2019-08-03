@@ -2,6 +2,51 @@
 .subtitle {
   font-weight: 300;
   text-align: center;
+  color: #000;
+}
+
+.current-container {
+  height: 50%;
+  width: 100%;
+}
+.grid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  justify-content: center;
+  margin: 0 2rem;
+}
+.current-table {
+  margin-right: 20px;
+  border: solid 2px #41403e;
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.current-table:nth-child(1) {
+  background-color: #ff6b6b;
+  margin: 1rem;
+}
+.current-table:nth-child(2) {
+  background-color: #4ecdc4;
+  margin: 1rem;
+}
+.current-table:nth-child(3) {
+  background-color: #ffe66d;
+  margin: 1rem;
+}
+.current-table:nth-child(4) {
+  background-color: #1a535c;
+  margin: 1rem;
+}
+.current-table:nth-child(5) {
+  background-color: #ff6b6b;
+  margin: 1rem;
+}
+.current-table:nth-child(6) {
+  background-color: #4ecdc4;
+  margin: 1rem;
 }
 
 .MuiTableCell {
@@ -51,10 +96,6 @@
   }
 }
 
-.MuiTableHead-root {
-  background-color: #5398dd;
-}
-
-.MuiTableCell-head {
-  color: #eee !important;
+.current-table:nth-child(1st) {
+  background-color: red;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
+import "./Loader.css";
 const useStyles = makeStyles(theme => ({
   progress: {
     margin: theme.spacing(2)
@@ -13,9 +14,10 @@ export default function CircularIndeterminate() {
 
   return (
     <div className="current-weather__circle">
-      <div className="loader">
-        <CircularProgress className={classes.progress} />
-        <p className="loading">Loading</p>
+      <div class="fulfilling-bouncing-circle-spinner">
+        <div class="circle" />
+        <div class="orbit" />
+        <p />
       </div>
     </div>
   );
